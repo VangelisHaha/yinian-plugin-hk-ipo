@@ -1,0 +1,29 @@
+{
+  "scope": "plugin",
+  "fields": [
+    {
+      "key": "intro",
+      "type": "note",
+      "label": "说明",
+      "text": "数据来自**华盛证券的公开页面**，不需要账号或 Token。这里只有抓取相关的选项，具体同步哪些时点在每个实例里配。"
+    },
+    {
+      "key": "httpTimeoutSeconds",
+      "type": "integer",
+      "label": "抓取超时",
+      "default": 20,
+      "min": 5,
+      "max": 60,
+      "unit": "seconds",
+      "help": "网络慢的时候可以调大。上限 60 秒，再长就该怀疑数据源出问题了。"
+    },
+    {
+      "key": "userAgent",
+      "type": "string",
+      "label": "User-Agent",
+      "placeholder": "留空用内置的浏览器 UA",
+      "maxLength": 256,
+      "help": "一般不用改。数据源挡住默认 UA 时才需要换一个。"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "manifestVersion": 1,
+  "id": "yinian-hk-ipo",
+  "name": "港股新股",
+  "version": "0.1.0",
+  "author": "vangelis",
+  "description": "把港股新股的认购截止、公布结果、暗盘与上市四个时点同步成一念的日历事件",
+  "homepage": "https://github.com/VangelisHaha/yinian-plugin-hk-ipo",
+  "minHostVersion": "0.6.0",
+  "runtime": {
+    "kind": "process",
+    "node": ">=20",
+    "entry": {
+      "default": "dist/main.mjs"
+    }
+  },
+  "permissions": {
+    "net": ["www.aul711.com"],
+    "spawn": [],
+    "fs": [],
+    "api": []
+  },
+  "contributes": {
+    "sync": {
+      "resources": ["event"],
+      "capabilities": {
+        "actions": ["list"],
+        "fields": []
+      }
+    },
+    "syncStrategy": {
+      "modes": ["interval", "manual"],
+      "defaultIntervalSeconds": 3600,
+      "minIntervalSeconds": 1800
+    },
+    "hooks": [],
+    "settingsPanel": ["settings.plugin.json", "settings.integration.json"]
+  },
+  "authMode": []
+}

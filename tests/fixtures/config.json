@@ -1,0 +1,16 @@
+{
+  "good": {
+    "integration": {
+      "sourceUrl": "https://www.aul711.com/ipo/hk/v2/ipo-hk-index",
+      "darkPoolWindow": "16:15-18:30",
+      "holidays": "2026-10-01, 2026-12-25"
+    }
+  },
+  "bad": {
+    "integration": {
+      "sourceUrl": "not-a-url",
+      "darkPoolWindow": "18:30-16:15",
+      "holidays": "2026-13-99"
+    }
+  }
+}

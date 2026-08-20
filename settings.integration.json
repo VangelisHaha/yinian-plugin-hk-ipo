@@ -1,0 +1,80 @@
+{
+  "scope": "integration",
+  "fields": [
+    {
+      "key": "calendarName",
+      "type": "string",
+      "label": "日历名称",
+      "default": "港股新股",
+      "maxLength": 64,
+      "help": "显示在日历侧栏上。这个日历是只读的，可以随时隐藏。"
+    },
+    {
+      "key": "milestones",
+      "type": "multi-enum",
+      "label": "同步哪些时点",
+      "default": ["applyEnd", "result", "darkPool", "listing"],
+      "options": [
+        { "value": "applyEnd", "label": "认购截止" },
+        { "value": "result", "label": "公布结果" },
+        { "value": "darkPool", "label": "暗盘" },
+        { "value": "listing", "label": "上市" }
+      ],
+      "help": "一只新股会为选中的每个时点各生成一个事件。不打新只想知道上市日的话，只留「上市」。"
+    },
+    {
+      "key": "phases",
+      "type": "multi-enum",
+      "label": "覆盖哪些阶段",
+      "default": ["subscribing", "pending-listed"],
+      "options": [
+        { "value": "subscribing", "label": "可认购" },
+        { "value": "pending-listed", "label": "待上市" }
+      ],
+      "help": "「已递表」还没有确定日期，不在同步范围内。"
+    },
+    {
+      "key": "darkPoolGroup",
+      "type": "group",
+      "label": "暗盘",
+      "fields": [
+        {
+          "key": "darkPoolNote",
+          "type": "note",
+          "label": "关于暗盘时间",
+          "text": "暗盘是**券商在上市前一晚撮合的场外交易**，不是港交所盘内交易，时间固定在上市日前一个港股交易日。数据源大多数时候不填这一列，此时插件会按「上市日前一个非周末日」推导，事件标题会带「（推导）」——**请以券商公告为准**。"
+        },
+        {
+          "key": "darkPoolWindow",
+          "type": "string",
+          "label": "暗盘时段",
+          "default": "16:15-18:30",
+          "pattern": "^\\d{1,2}:\\d{2}-\\d{1,2}:\\d{2}$",
+          "help": "数据源给了具体时段时以它为准，这里是兜底值。"
+        },
+        {
+          "key": "holidays",
+          "type": "string",
+          "label": "额外的港股休市日",
+          "placeholder": "2026-10-01, 2026-12-25",
+          "maxLength": 512,
+          "help": "推导暗盘日期时会跳过这些日期。插件不内置公众假期表（那需要农历库），碰上长假前后的新股就在这里补一下。"
+        }
+      ]
+    },
+    {
+      "key": "sourceUrl",
+      "type": "string",
+      "format": "url",
+      "label": "数据源地址",
+      "default": "https://www.aul711.com/ipo/hk/v2/ipo-hk-index",
+      "help": "一般不用改。改了要保证页面结构一致，否则解析不出来。"
+    },
+    {
+      "key": "testSource",
+      "type": "action",
+      "label": "测试数据源",
+      "rpc": "hkIpo.testSource"
+    }
+  ]
+}
