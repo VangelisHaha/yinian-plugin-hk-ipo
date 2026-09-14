@@ -1,7 +1,7 @@
 {
   "name": "yinian-plugin-hk-ipo",
   "version": "0.1.0",
-  "description": "一念（Yinian）的港股新股日历插件：认购截止 / 公布结果 / 暗盘 / 上市四个时点，零运行时依赖",
+  "description": "安时（Nuncta）的港股新股日历插件：认购截止 / 公布结果 / 暗盘 / 上市四个时点，零运行时依赖",
   "type": "module",
   "private": true,
   "engines": {

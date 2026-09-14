@@ -1,12 +1,12 @@
 # AGENTS.md — yinian-plugin-hk-ipo
 
-[一念](https://github.com/VangelisHaha/nikou-agenda)的港股新股**日历**同步插件。
+[安时](https://github.com/VangelisHaha/nikou-agenda)的港股新股**日历**同步插件。
 数据源是华盛证券的公开页面，没有凭据。
 
 ## 必须遵守
 
 - 中文回复，中文写注释与文档。
-- 契约的 source of truth 是一念仓库的 `docs/11-plugin-architecture.md` **§5.1.1（Event 资源）**，不是本仓库的 SDK。两者不一致时以文档为准。
+- 契约的 source of truth 是安时仓库的 `docs/11-plugin-architecture.md` **§5.1.1（Event 资源）**，不是本仓库的 SDK。两者不一致时以文档为准。
 - 改完必须 `npm run verify`（build + doctor + 测试）全绿。
 - `src/sdk/` 是从 [yinian-plugin-template](https://github.com/VangelisHaha/yinian-plugin-template) 同步来的，**不要在这里改**——改了下次同步会被覆盖。有问题去模板仓库改。
 - 不引任何运行时依赖。只用 Node 标准库 + 内置 `fetch`。

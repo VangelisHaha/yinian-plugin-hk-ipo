@@ -4,7 +4,7 @@
   "name": "港股新股",
   "version": "0.1.0",
   "author": "vangelis",
-  "description": "把港股新股的认购截止、公布结果、暗盘与上市四个时点同步成一念的日历事件",
+  "description": "把港股新股的认购截止、公布结果、暗盘与上市四个时点同步成安时的日历事件",
   "homepage": "https://github.com/VangelisHaha/yinian-plugin-hk-ipo",
   "minHostVersion": "0.6.0",
   "runtime": {
