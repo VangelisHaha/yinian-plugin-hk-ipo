@@ -26,7 +26,8 @@
       "capabilities": {
         "actions": ["list"],
         "fields": []
-      }
+      },
+      "defaultReminders": { "reminders": [] }
     },
     "syncStrategy": {
       "modes": ["interval", "manual"],
